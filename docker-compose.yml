@@ -1,0 +1,16 @@
+version: '3'
+services:
+  cicd-webpack-oran:
+    build:
+      dockerfile: dockerfile
+    volumes:
+      - /app/node_modules
+  nginx:
+    depends_on:
+      - webpack
+    restart: always
+    build:
+      dockerfile: dockerfile
+      context: ./nginx
+    ports: 
+      - "8080:80"
