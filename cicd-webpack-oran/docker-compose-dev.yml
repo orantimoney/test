@@ -1,0 +1,8 @@
+version: '3'
+services:
+  cicd-webpack-oran-dev:
+    container_name: webpack-dev
+    build:
+      dockerfile: dockerfile.dev
+    ports: 
+      - "8080:8080"
